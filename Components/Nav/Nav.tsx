@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 
 type Props = {
@@ -15,6 +15,15 @@ export type LinkItem = {
 
 export default function Nav({ navLinks }: Props) {
   const pathname = usePathname();
+  const [showNav, setShowNav] = useState(false);
+
+  const showNavigation = () => {
+    setShowNav((prev) => !prev);
+  };
+
+  // const navFunction = () => {
+  //   setShowNav((prev) => !prev);
+  // };
 
   //     href: "/customer-services/contact-us",
   //     linkText: "contact us",
@@ -66,28 +75,42 @@ export default function Nav({ navLinks }: Props) {
   //   },
   // ];
   return (
-    <div>
-      <ul className='pl-[100px] pt-[100px]'>
-        {navLinks.map((link, i) => {
-          const isActive: boolean = pathname === link.href;
+    <>
+      <button onClick={showNavigation}>test</button>
+      {showNav && (
+        <div className='flex flex-col h-screen w-full md:w-1/4 justify-center items-center md:flex-1 fixed md:fixed top-0 md:flex bg-white'>
+          <button
+            className='md:hidden absolute right-4 top-4'
+            onClick={showNavigation}
+          >
+            close
+          </button>{" "}
+          <ul className=''>
+            {navLinks.map((link, i) => {
+              const isActive: boolean = pathname === link.href;
 
-          return (
-            <li
-              key={i}
-              className='uppercase my-4 hover:underline underline-offset-8 '
-            >
-              {" "}
-              <Link
-                className={isActive ? "text-blue-500 font-bold" : "text-black"}
-                href={link.href}
-                key={link.linkText}
-              >
-                {link.linkText}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+              return (
+                <li
+                  key={i}
+                  className='uppercase my-4 hover:underline underline-offset-8 '
+                >
+                  {" "}
+                  <Link
+                    onClick={() => setTimeout(() => setShowNav(false), 2000)}
+                    className={
+                      isActive ? "text-blue-500 font-bold" : "text-black"
+                    }
+                    href={link.href}
+                    key={link.linkText}
+                  >
+                    {link.linkText}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
+    </>
   );
 }

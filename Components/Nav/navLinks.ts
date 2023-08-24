@@ -29,10 +29,6 @@ export const navLinks = [
       linkText: "FAQs",
     },
     {
-      href: "/customer-services/klarna",
-      linkText: "Klarna",
-    },
-    {
       href: "/customer-services/terms",
       linkText: "Terms & Conditions",
     },
