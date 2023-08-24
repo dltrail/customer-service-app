@@ -6,7 +6,7 @@ type Props = {
 
 export default function Header({ title }: Props) {
   return (
-    <header className='text-2xl mt-10 uppercase tracking-wider text-center'>
+    <header className='text-4xl mt-10 uppercase tracking-wider text-center'>
       {title}
     </header>
   );
