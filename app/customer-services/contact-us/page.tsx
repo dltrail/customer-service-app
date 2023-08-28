@@ -1,17 +1,13 @@
 "use client";
-import Header from "@/Components/Header/Header";
+import Header from "@/Components/Header/Header"
+import React from "react";
 
 function Page() {
   return (
     <main className=''>
       <Header title='Contact' />
       <div>
-        Ea eiusmod nostrud laboris ea ipsum sint consectetur elit id. Sint
-        veniam proident reprehenderit aliquip mollit dolor consectetur ad sit
-        amet mollit. Sint adipisicing qui tempor dolor. Esse id commodo
-        excepteur aliqua nostrud do. Occaecat consequat irure Lorem tempor
-        mollit in sint. Nostrud tempor qui voluptate officia cillum cillum id
-        cupidatat consequat eiusmod consequat fugiat qui. Ut amet proident
+        Ut amet proident
         cupidatat deserunt magna commodo voluptate officia id cillum officia
         laboris cupidatat. Dolore in amet pariatur eiusmod pariatur eiusmod
         laborum enim consectetur dolor fugiat pariatur. Consequat ex cillum
